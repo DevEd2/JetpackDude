@@ -1,0 +1,9 @@
+@echo off
+
+echo Assembling...
+bin\rgbasm -o JetpackDude.obj -p 255 Main.asm
+echo Linking...
+bin\rgblink -p 255 -o JetpackDude.gb -n JetpackDude.sym JetpackDude.obj
+echo Fixing...
+bin\rgbfix -v -p 255 JetpackDude.gb
+echo Build complete.
