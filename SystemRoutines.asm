@@ -129,9 +129,12 @@ LoadMap:
 	dec	c
 	jr	nz,.loop
 	ld	c,$14
-	rept	12
-	inc	de
-	endr
+	ld	a,e
+	add	$C
+	jr	nc,.continue
+	inc	d
+.continue
+	ld	e,a
 	dec	b
 	jr	nz,.loop
 	ret
